@@ -1,0 +1,32 @@
+﻿  Compiling CUDA source file cuda_main.cu...
+  
+  C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA>"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin\nvcc.exe" -gencode=arch=compute_52,code=\"sm_52,compute_52\" --use-local-env -ccbin "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\bin\HostX86\x64" -x cu   -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\include" -I"C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.0\include"  -G   --keep-dir x64\Debug -maxrregcount=0  --machine 64 --compile -cudart static  -g   -D_DEBUG -D_CONSOLE -D_UNICODE -DUNICODE -Xcompiler "/EHsc /W3 /nologo /Od /Fdx64\Debug\vc142.pdb /FS /Zi /RTC1 /MDd " -o x64\Debug\cuda_main.cu.obj "C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\cuda_main.cu" 
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\stb_image.h(4183): warning : variable "old_limit" was set but never used
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\stb_image.h(5096): warning : variable "idata_limit_old" was set but never used
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\stb_image.h(6881): warning : variable "out_size" was set but never used
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\stb_image.h(6882): warning : variable "delays_size" was set but never used
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("ray") that is explicitly defaulted on its first declaration
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\objectList.h(20): warning : a __device__ function("objectList::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(21): warning : a __device__ function("sphere::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(26): warning : a __device__ function("sphereMoving::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(60): warning : a __device__ function("sphereMoving::center") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\lambertian.h(15): warning : a __device__ function("lambertian::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\matel.h(20): warning : a __device__ function("matel::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\dielectric.h(15): warning : a __device__ function("dielectric::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+CUDACOMPILE : ptxas warning : Stack size for entry function '_Z6renderPhiiPP6cameraPP6objectiiP17curandStateXORWOW' cannot be statically determined
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("ray") that is explicitly defaulted on its first declaration
+  
+  cuda_main.cu
+  RayTracingInOneWeekend_CUDA.vcxproj -> C:\VSproject\RayTracingInOneWeekend_CUDA\x64\Debug\RayTracingInOneWeekend_CUDA.exe

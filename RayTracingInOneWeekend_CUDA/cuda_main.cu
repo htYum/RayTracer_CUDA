@@ -16,6 +16,7 @@
 #include "camera.h"
 #include "object\objectList.h"
 #include "object\sphere.h"
+#include "object\sphereMoving.h"
 #include "material\lambertian.h"
 #include "material\matel.h"
 #include "material\dielectric.h"
@@ -104,7 +105,7 @@ __global__ void createWorld(object** list, object** world, camera** cam, int wid
                 float chooseMat = cuda_rand;
                 vec3 center(a + cuda_rand * 0.9, 0.2, b + cuda_rand * 0.9);
                 if (chooseMat < 0.6) {
-                    list[i++] = new sphere(center, 0.2, new lambertian(vec3(cuda_rand * cuda_rand, cuda_rand * cuda_rand, cuda_rand * cuda_rand)));
+                    list[i++] = new sphereMoving(center, center + vec3(0, cuda_rand * 0.5, 0), 0.0, 1.0,  0.2, new lambertian(vec3(cuda_rand * cuda_rand, cuda_rand * cuda_rand, cuda_rand * cuda_rand)));
                 }
                 else if (chooseMat < 0.85) {
                     list[i++] = new sphere(center, 0.2, new matel(vec3(0.5 * (1.0 + cuda_rand), 0.5 * (1.0 + cuda_rand), 0.5 * (1.0 + cuda_rand)), 0.35 * cuda_rand));
@@ -123,12 +124,16 @@ __global__ void createWorld(object** list, object** world, camera** cam, int wid
         *randState = localRandState;
         *world = new objectList(list, *worldObjNum);
 
+        // camera initialize
         vec3 cameraPos(13, 2, 3);
         vec3 cameraTarget(0, 0, 0);
+        float fov = 30.0;
         float focusDistance = 10.0;
         float aperture = 0.1;
-        
-        *cam = new camera(cameraPos, cameraTarget, vec3(0, 1.0, 0), 30.0, float(width) / float(height), aperture, focusDistance);
+        float beginTime = 0.0;
+        float endTime = 1.0;
+
+        *cam = new camera(cameraPos, cameraTarget, vec3(0, 1.0, 0), fov, float(width) / float(height), aperture, focusDistance, beginTime, endTime);
     }
 }
 
