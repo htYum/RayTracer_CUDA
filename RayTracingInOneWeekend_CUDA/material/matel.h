@@ -19,7 +19,7 @@ public:
 
 bool matel::scatter(const ray& rayIn, const hitRecord& rec, vec3& attenuation, ray& scattered, curandState* localRandState) const {
     vec3 reflected = reflect(normalize(rayIn.getDir()), rec.normal);
-    scattered = ray(rec.p, reflected + fuzz * randomInSphere(localRandState));
+    scattered = ray(rec.p, reflected + fuzz * randomInSphere(localRandState), curand_uniform(localRandState));
     attenuation = albedo;
     return (dot(rec.normal, reflected) > 0);
 }

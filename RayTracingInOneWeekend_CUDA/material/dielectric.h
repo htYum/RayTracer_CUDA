@@ -26,6 +26,6 @@ bool dielectric::scatter(const ray& rayIn, const hitRecord& rec, vec3& attenuati
         return true;
     }
     vec3 refracted = refract(dir, rec.normal, refractRate);
-    scattered = ray(rec.p, refracted);
+    scattered = ray(rec.p, refracted, curand_uniform(localRandState));
     return true;
 }

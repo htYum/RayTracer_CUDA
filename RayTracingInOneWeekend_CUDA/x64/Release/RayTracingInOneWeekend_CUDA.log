@@ -15,9 +15,9 @@ C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\obje
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(21): warning : a __device__ function("sphere::hit") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(26): warning : a __device__ function("sphereMoving::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(29): warning : a __device__ function("sphereMoving::hit") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(60): warning : a __device__ function("sphereMoving::center") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(63): warning : a __device__ function("sphereMoving::center") redeclared without __device__, hence treated as a __host__ __device__ function
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\lambertian.h(15): warning : a __device__ function("lambertian::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
   

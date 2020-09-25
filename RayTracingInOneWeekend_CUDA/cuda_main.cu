@@ -80,8 +80,8 @@ __global__ void render(unsigned char* fb, int width, int height, camera** cam, o
     vec3 color(0.0, 0.0, 0.0);
     curandState localRandState = randState[index/4];
     for (int k = 0; k < samplerPerPixel; ++k) {
-        float u = (i + curand_uniform(&localRandState)) / width;
-        float v = (j + curand_uniform(&localRandState)) / height;
+        float u = (i + cuda_rand) / width;
+        float v = (j + cuda_rand) / height;
         ray r = (*cam)->getRay(u, v, &localRandState);
         color += rayColor(r, world, maxDepth, &localRandState);
     }
