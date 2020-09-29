@@ -1,37 +1,48 @@
 #pragma once
 
-#include "object.h"
+#include "Object.h"
 
-class sphere : public object {
+__device__ void getSphereUV(Vec3& p, float& u, float& v) {
+    float x = p.getX();
+    float y = p.getY();
+    float z = p.getZ();
+    float phi = atan2(z, x);
+    float theta = asin(y);
+    u = 0.5 - phi / (2 * Pi);
+    v = theta / Pi + 0.5;
+}
+
+class Sphere : public Object {
 public:
-    __device__ sphere() {}
-    __device__ sphere(const vec3& cen, float r, material* m) :
+    __device__ Sphere() {}
+    __device__ Sphere(const Vec3& cen, float r, Material* m) :
         center(cen),
         radius(r),
         mat(m) {}
-    __device__ ~sphere() {}
-    __device__ virtual bool hit(const ray& r, float tMin, float tMax, hitRecord& rec) const;
+    __device__ ~Sphere() {}
+    __device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const;
+    __device__ virtual bool boundingBox(AABB& box, float t0, float t1) const;
 
 public:
-    vec3 center;
+    Vec3 center;
     float radius;
-    material* mat;
+    Material* mat;
 };
 
-bool sphere::hit(const ray& r, float tMin, float tMax, hitRecord& rec) const {
-    vec3 ac = r.getPos() - center;
+bool Sphere::hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const {
+    Vec3 ac = r.getPos() - center;
     float a = dot(r.getDir(), r.getDir());
     float halfb = dot(ac, r.getDir());
     float c = dot(ac, ac) - radius * radius;
     float result = halfb * halfb - a * c;
-
     if (result > 0) {
         float root = sqrt(result);
         float temp = (-halfb - root) / a;
         if (temp < tMax && temp > tMin) {
             rec.t = temp;
             rec.p = r.at(rec.t);
-            vec3 outwardNormal = (rec.p - center) / radius;
+            getSphereUV((rec.p - center) / radius, rec.u, rec.v);
+            Vec3 outwardNormal = (rec.p - center) / radius;
             // outwardNormal = normalize(outwardNormal);
             rec.setFaceNormal(r, outwardNormal);
             rec.mat = mat;
@@ -41,7 +52,8 @@ bool sphere::hit(const ray& r, float tMin, float tMax, hitRecord& rec) const {
         if (temp < tMax && temp > tMin) {
             rec.t = temp;
             rec.p = r.at(rec.t);
-            vec3 outwardNormal = (rec.p - center) / radius;
+            getSphereUV((rec.p - center) / radius, rec.u, rec.v);
+            Vec3 outwardNormal = (rec.p - center) / radius;
             // outwardNormal = normalize(outwardNormal);
             rec.setFaceNormal(r, outwardNormal);
             rec.mat = mat;
@@ -49,4 +61,9 @@ bool sphere::hit(const ray& r, float tMin, float tMax, hitRecord& rec) const {
         }
     }
     return false;
+}
+
+bool Sphere::boundingBox(AABB& box, float t0, float t1)const {
+    box = AABB(center - Vec3(radius, radius, radius), center + Vec3(radius, radius, radius));
+    return true;
 }

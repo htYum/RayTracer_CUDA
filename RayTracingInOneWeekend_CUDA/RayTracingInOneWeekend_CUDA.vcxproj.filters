@@ -66,6 +66,24 @@
     <ClInclude Include="object\sphereMoving.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="object\aabb.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object\BVHnode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\RGBtexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\CheckerTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="texture\ImageTexture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="cuda_main.cu" />

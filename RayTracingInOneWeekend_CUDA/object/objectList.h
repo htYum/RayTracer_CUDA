@@ -1,24 +1,25 @@
 #pragma once
 
-#include <vector>
-#include "object.h"
+#include <thrust\device_vector.h>
+#include "Object.h"
 #include "..\global.h"
 
-class objectList : public object {
+class ObjectList : public Object {
 public:
-    __device__ objectList() {}
-    __device__ objectList(object** list, int n) { objects = list; size = n; }
-    __device__ ~objectList() {}
+    __device__ ObjectList() {}
+    __device__ ObjectList(Object** list, int n) { objects = list; size = n; }
+    __device__ ~ObjectList() {}
 
-    __device__ virtual bool hit(const ray& r, float tMin, float tMax, hitRecord& rec) const;
+    __device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const;
+    __device__ virtual bool boundingBox(AABB& box, float t0, float t1) const;
 
 public:
-    object** objects;
+    Object** objects;
     int size;
 };
 
-bool objectList::hit(const ray& r, float tMin, float tMax, hitRecord& rec) const {
-    hitRecord tempRec;
+bool ObjectList::hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const {
+    HitRecord tempRec;
     bool hitOne = false;
     float far = tMax;
 
@@ -30,4 +31,19 @@ bool objectList::hit(const ray& r, float tMin, float tMax, hitRecord& rec) const
         }
     }
     return hitOne;
+}
+
+bool ObjectList::boundingBox(AABB& box, float t0, float t1)const {
+    if (size == 0) return false;
+
+    AABB tempBox;
+    bool firstBox;
+
+    for (int i = 0; i < size; ++i) {
+        if (objects[i]->boundingBox(tempBox, t0, t1)) {
+            box = firstBox ? tempBox : surroundingBox(tempBox, box);
+            firstBox = false;
+        }
+    }
+    return true;
 }

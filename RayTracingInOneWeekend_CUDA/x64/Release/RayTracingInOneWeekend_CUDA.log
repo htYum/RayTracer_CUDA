@@ -9,25 +9,53 @@ C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\stb_image.h
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\stb_image.h(6882): warning : variable "delays_size" was set but never used
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("ray") that is explicitly defaulted on its first declaration
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("Ray") that is explicitly defaulted on its first declaration
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\objectList.h(20): warning : a __device__ function("objectList::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\AABB.h(20): warning : a __device__ function("AABB::hit") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(21): warning : a __device__ function("sphere::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\objectList.h(21): warning : a __device__ function("ObjectList::hit") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(29): warning : a __device__ function("sphereMoving::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\objectList.h(36): warning : a __device__ function("ObjectList::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(63): warning : a __device__ function("sphereMoving::center") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(32): warning : a __device__ function("Sphere::hit") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\lambertian.h(15): warning : a __device__ function("lambertian::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(44): warning : initial value of reference to non-const must be an lvalue
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\matel.h(20): warning : a __device__ function("matel::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(55): warning : initial value of reference to non-const must be an lvalue
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\dielectric.h(15): warning : a __device__ function("dielectric::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(66): warning : a __device__ function("Sphere::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
   
-CUDACOMPILE : ptxas warning : Stack size for entry function '_Z11createWorldPP6objectS1_PP6cameraiiP17curandStateXORWOWPi' cannot be statically determined
-CUDACOMPILE : ptxas warning : Stack size for entry function '_Z6renderPhiiPP6cameraPP6objectiiP17curandStateXORWOW' cannot be statically determined
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("ray") that is explicitly defaulted on its first declaration
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(27): warning : a __device__ function("SphereMoving::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(61): warning : a __device__ function("SphereMoving::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(67): warning : a __device__ function("SphereMoving::center") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(55): warning : a __device__ function("BVHnode::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(64): warning : a __device__ function("BVHnode::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(69): warning : a __device__ function("BVHnode::BVHnode") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\..\texture\RGBtexture.h(17): warning : a __device__ function("RGBtexture::value") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\lambertian.h(17): warning : a __device__ function("Lambertian::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\matel.h(20): warning : a __device__ function("Matel::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\dielectric.h(15): warning : a __device__ function("Dielectric::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\texture\CheckerTexture.h(18): warning : a __device__ function("CheckerTexture::value") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\texture\ImageTexture.h(19): warning : a __device__ function("ImageTexture::value") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+CUDACOMPILE : ptxas warning : Stack size for entry function '_Z11createWorldPP6ObjectS1_PP6CameraiiP17curandStateXORWOWPiPhiii' cannot be statically determined
+CUDACOMPILE : ptxas warning : Stack size for entry function '_Z6renderPhiiPP6CameraPP6ObjectiiP17curandStateXORWOW' cannot be statically determined
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("Ray") that is explicitly defaulted on its first declaration
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(44): warning : initial value of reference to non-const must be an lvalue
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphere.h(55): warning : initial value of reference to non-const must be an lvalue
   
   cuda_main.cu
   LINK : 已指定 /LTCG，但不需要生成代码；从链接命令行中移除 /LTCG 以提高链接器性能

@@ -1,25 +1,25 @@
 #pragma once
 
-#include "material.h"
+#include "Material.h"
 
-class matel : public material {
+class Matel : public Material {
 public:
-    vec3 albedo;
+    Vec3 albedo;
     float fuzz;
 
 public:
-    __host__ __device__ matel() {}
-    __host__ __device__ matel(const vec3& a, float f = 0.0) :
+    __device__ Matel() {}
+    __device__ Matel(const Vec3& a, float f = 0.0) :
         albedo(a),
         fuzz(f) {}
-    __host__ __device__ ~matel() {}
+    __device__ ~Matel() {}
 
-    __device__ virtual bool scatter(const ray& rayIn, const hitRecord& rec, vec3& attenuation, ray& scattered, curandState* localRandState)const;
+    __device__ virtual bool scatter(const Ray& rayIn, const HitRecord& rec, Vec3& attenuation, Ray& scattered, curandState* localRandState)const;
 };
 
-bool matel::scatter(const ray& rayIn, const hitRecord& rec, vec3& attenuation, ray& scattered, curandState* localRandState) const {
-    vec3 reflected = reflect(normalize(rayIn.getDir()), rec.normal);
-    scattered = ray(rec.p, reflected + fuzz * randomInSphere(localRandState), curand_uniform(localRandState));
+bool Matel::scatter(const Ray& rayIn, const HitRecord& rec, Vec3& attenuation, Ray& scattered, curandState* localRandState) const {
+    Vec3 reflected = reflect(normalize(rayIn.getDir()), rec.normal);
+    scattered = Ray(rec.p, reflected + fuzz * randomInSphere(localRandState), rayIn.time);
     attenuation = albedo;
     return (dot(rec.normal, reflected) > 0);
 }

@@ -133,6 +133,10 @@
       <StackReserveSize>80000000</StackReserveSize>
       <StackCommitSize>80000000</StackCommitSize>
     </Link>
+    <CudaCompile>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <MaxRegCount>100</MaxRegCount>
+    </CudaCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -164,6 +168,8 @@
     <ClInclude Include="material\matel.h" />
     <ClInclude Include="material\material.h" />
     <ClInclude Include="math\vec3.h" />
+    <ClInclude Include="object\aabb.h" />
+    <ClInclude Include="object\BVHnode.h" />
     <ClInclude Include="object\object.h" />
     <ClInclude Include="object\objectList.h" />
     <ClInclude Include="object\sphere.h" />
@@ -171,6 +177,10 @@
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_image_write.h" />
     <ClInclude Include="ray.h" />
+    <ClInclude Include="texture\CheckerTexture.h" />
+    <ClInclude Include="texture\ImageTexture.h" />
+    <ClInclude Include="texture\RGBtexture.h" />
+    <ClInclude Include="texture\texture.h" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="cuda_main.cu">

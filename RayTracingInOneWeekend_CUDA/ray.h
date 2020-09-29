@@ -1,25 +1,25 @@
 #pragma once
 
-#include "Math/vec3.h"
+#include "Math/Vec3.h"
 
-class ray {
+class Ray {
 public:
-    __device__ ray() = default;
-    __device__ ray(const vec3& position, const vec3& direction, float t = 0) :
+    __device__ Ray() = default;
+    __device__ Ray(const Vec3& position, const Vec3& direction, float t = 0) :
         pos(position),
-        dir(direction),
+        dir(normalize(direction)),
         time(t){}
 
-    __device__ vec3 getPos() const { return pos; }
-    __device__ vec3 getDir() const { return dir; }
+    __device__ Vec3 getPos() const { return pos; }
+    __device__ Vec3 getDir() const { return dir; }
     __device__ float getTime() const { return time; }
 
-    __device__ vec3 at(float t) const {
+    __device__ Vec3 at(float t) const {
         return pos + t * dir;
     }
 
 public:
-    vec3 pos;
-    vec3 dir;
+    Vec3 pos;
+    Vec3 dir;
     float time;
 };
