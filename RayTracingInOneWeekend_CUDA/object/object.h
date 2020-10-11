@@ -21,6 +21,6 @@ struct HitRecord {
 
 class Object {
 public:
-    __device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const = 0;
+    __device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState) const = 0;
     __device__ virtual bool boundingBox(AABB& box, float t0, float t1) const = 0;
 };

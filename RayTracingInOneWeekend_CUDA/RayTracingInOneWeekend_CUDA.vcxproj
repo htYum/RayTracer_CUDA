@@ -155,25 +155,38 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <StackReserveSize>80000000</StackReserveSize>
       <StackCommitSize>80000000</StackCommitSize>
+      <HeapReserveSize>80000000</HeapReserveSize>
+      <HeapCommitSize>80000000</HeapCommitSize>
+      <LargeAddressAware>true</LargeAddressAware>
     </Link>
     <CudaCompile>
       <PtxAsOptionV>false</PtxAsOptionV>
+      <GenerateLineInfo>true</GenerateLineInfo>
+      <MaxRegCount>30000</MaxRegCount>
+      <GPUDebugInfo>true</GPUDebugInfo>
     </CudaCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="camera.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="material\dielectric.h" />
+    <ClInclude Include="material\DiffuseLight.h" />
+    <ClInclude Include="material\Isotropic.h" />
     <ClInclude Include="material\lambertian.h" />
     <ClInclude Include="material\matel.h" />
     <ClInclude Include="material\material.h" />
     <ClInclude Include="math\vec3.h" />
     <ClInclude Include="object\aabb.h" />
+    <ClInclude Include="object\box.h" />
     <ClInclude Include="object\BVHnode.h" />
+    <ClInclude Include="object\constantMedium.h" />
+    <ClInclude Include="object\flat.h" />
     <ClInclude Include="object\object.h" />
     <ClInclude Include="object\objectList.h" />
     <ClInclude Include="object\sphere.h" />
     <ClInclude Include="object\sphereMoving.h" />
+    <ClInclude Include="object\translate.h" />
+    <ClInclude Include="object\yRotate.h" />
     <ClInclude Include="stb_image.h" />
     <ClInclude Include="stb_image_write.h" />
     <ClInclude Include="ray.h" />

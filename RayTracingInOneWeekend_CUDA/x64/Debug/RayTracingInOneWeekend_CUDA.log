@@ -31,11 +31,33 @@ C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphe
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphereMoving.h(67): warning : a __device__ function("SphereMoving::center") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(55): warning : a __device__ function("BVHnode::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(80): warning : a __device__ function("BVHnode::hit") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(64): warning : a __device__ function("BVHnode::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(89): warning : a __device__ function("BVHnode::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
   
-C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(69): warning : a __device__ function("BVHnode::BVHnode") redeclared without __device__, hence treated as a __host__ __device__ function
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\BVHnode.h(94): warning : a __device__ function("BVHnode::BVHnode") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\box.h(20): warning : a __device__ function("Box::Box") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\box.h(33): warning : a __device__ function("Box::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\box.h(48): warning : a __device__ function("Box::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\yRotate.h(20): warning : a __device__ function("yRotate::yRotate") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\yRotate.h(48): warning : a __device__ function("yRotate::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\yRotate.h(75): warning : a __device__ function("yRotate::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\translate.h(18): warning : a __device__ function("Translate::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\translate.h(28): warning : a __device__ function("Translate::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\..\material\Isotropic.h(17): warning : a __device__ function("Isotropic::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\constantMedium.h(19): warning : a __device__ function("ConstantMedium::hit") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\constantMedium.h(49): warning : a __device__ function("ConstantMedium::boundingBox") redeclared without __device__, hence treated as a __host__ __device__ function
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\..\texture\RGBtexture.h(17): warning : a __device__ function("RGBtexture::value") redeclared without __device__, hence treated as a __host__ __device__ function
   
@@ -45,11 +67,17 @@ C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\ma
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\dielectric.h(15): warning : a __device__ function("Dielectric::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
   
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\DiffuseLight.h(18): warning : a __device__ function("DiffuseLight::scatter") redeclared without __device__, hence treated as a __host__ __device__ function
+  
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\material\DiffuseLight.h(22): warning : a __device__ function("DiffuseLight::emitted") redeclared without __device__, hence treated as a __host__ __device__ function
+  
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\texture\CheckerTexture.h(18): warning : a __device__ function("CheckerTexture::value") redeclared without __device__, hence treated as a __host__ __device__ function
   
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\texture\ImageTexture.h(19): warning : a __device__ function("ImageTexture::value") redeclared without __device__, hence treated as a __host__ __device__ function
   
 CUDACOMPILE : ptxas warning : Conflicting options --device-debug and --generate-line-info specified, ignoring --generate-line-info option
+CUDACOMPILE : ptxas warning : Stack size for entry function '_Z11createWorldPP6ObjectS1_PP6CameraiiP17curandStateXORWOWPiPhiii' cannot be statically determined
+CUDACOMPILE : ptxas warning : Stack size for entry function '_Z11createWorldPP6ObjectS1_PP6CameraiiP17curandStateXORWOWPiPhiii' cannot be statically determined
 CUDACOMPILE : ptxas warning : Stack size for entry function '_Z6renderPhiiPP6CameraPP6ObjectiiP17curandStateXORWOW' cannot be statically determined
 C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\ray.h(7): warning : __device__ annotation is ignored on a function("Ray") that is explicitly defaulted on its first declaration
   
@@ -59,4 +87,7 @@ C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\sphe
   
 CUDACOMPILE : nvcc warning : '--device-debug (-G)' overrides '--generate-line-info (-lineinfo)'
   cuda_main.cu
+C:\VSproject\RayTracingInOneWeekend_CUDA\RayTracingInOneWeekend_CUDA\object\constantMedium.h(14): warning C4244: “初始化”: 从“double”转换到“float”，可能丢失数据
+C:/VSproject/RayTracingInOneWeekend_CUDA/RayTracingInOneWeekend_CUDA/cuda_main.cu(373): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
+C:/VSproject/RayTracingInOneWeekend_CUDA/RayTracingInOneWeekend_CUDA/cuda_main.cu(375): warning C4244: “初始化”: 从“double”转换到“int”，可能丢失数据
   RayTracingInOneWeekend_CUDA.vcxproj -> C:\VSproject\RayTracingInOneWeekend_CUDA\x64\Debug\RayTracingInOneWeekend_CUDA.exe

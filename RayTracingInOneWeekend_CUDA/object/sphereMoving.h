@@ -13,7 +13,7 @@ public:
 		radius(r),
 		mat(m){}
     __device__ ~SphereMoving(){}
-	__device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const;
+	__device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState) const;
     __device__ virtual bool boundingBox(AABB& box, float t0, float t1) const;
     __device__ Vec3 center(float time)const;
 
@@ -24,7 +24,7 @@ public:
     Material* mat;
 };
 
-bool SphereMoving::hit(const Ray& r, float tMin, float tMax, HitRecord& rec)const {
+bool SphereMoving::hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState)const {
     Vec3 cen = center(r.time);
     Vec3 ac = r.getPos() - cen;
     float a = dot(r.getDir(), r.getDir());

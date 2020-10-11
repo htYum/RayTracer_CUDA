@@ -10,6 +10,7 @@ public:
 
 public:
     __device__ Lambertian(Texture* a) : albedo(a) {}
+    __device__ ~Lambertian() { if (albedo != nullptr)delete albedo; }
 
     __device__ virtual bool scatter(const Ray& rayIn, const HitRecord& rec, Vec3& attenuation, Ray& scattered, curandState* localRandState)const;
 };

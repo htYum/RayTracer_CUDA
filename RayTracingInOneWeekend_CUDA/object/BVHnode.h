@@ -32,8 +32,33 @@ __device__ bool boxCompareZ(Object* a, Object* b) {
 	return boxCompare(a, b, 2);
 }
 
-__device__ void BVHsort(Object** objects, int start, int end) {
-
+__device__ void objectSort(Object** objects, int start, int end, int axis) {
+	Object** temp = new Object * [end - start];
+	int lmin, lmax, rmin, rmax;
+	int next;
+	for (int i = 1; i < end - start; i *= 2) {
+		for (lmin = start; lmin < end - i; lmin = rmax) {
+			rmin = lmax = lmin + i;
+			rmax = lmax + i;
+			if (rmax > end)rmax = end;
+			next = 0;
+			while (lmin < lmax && rmin < rmax) {
+				if (boxCompare(objects[lmin], objects[rmin], axis)) {
+					temp[next++] = objects[lmin++];
+				}
+				else {
+					temp[next++] = objects[rmin++];
+				}
+			}
+			while (lmin < lmax) {
+				objects[--rmin] = objects[--lmax];
+			}
+			while (next > 0) {
+				objects[--rmin] = temp[--next];
+			}
+		}
+	}
+	free(temp);
 }
 
 class BVHnode : public Object {
@@ -48,15 +73,15 @@ public:
 	__device__ BVHnode(Object** objects, int start, int end, float time0, float time1, curandState* localRandState);
 	__device__ ~BVHnode(){}
 
-	__device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const;
+	__device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState) const;
 	__device__ virtual bool boundingBox(AABB& box, float t0, float t1) const;
 };
 
-bool BVHnode::hit(const Ray& r, float tMin, float tMax, HitRecord& rec)const {
+bool BVHnode::hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState)const {
 	if (!box.hit(r, tMin, tMax))return false;
 
-	bool hitLeft = left->hit(r, tMin, tMax, rec);
-	bool hitRight = right->hit(r, tMin, (hitLeft ? rec.t : tMax), rec);
+	bool hitLeft = left->hit(r, tMin, tMax, rec, localRandState);
+	bool hitRight = right->hit(r, tMin, (hitLeft ? rec.t : tMax), rec, localRandState);
 
 	return hitLeft || hitRight;
 }
@@ -86,7 +111,8 @@ BVHnode::BVHnode(Object** objects, int start, int end, float time0, float time1,
 		}
 	}
 	else{
-		thrust::stable_sort(thrust::seq, objects + start, objects + end, comparator);
+		objectSort(objects, start, end, axis);
+		//thrust::stable_sort(thrust::seq, objects + start, objects + end, comparator);
 		auto mid = start + objectSpan / 2;
 		left = new BVHnode(objects, start, mid, time0, time1, localRandState);
 		right = new BVHnode(objects, mid, end, time0, time1, localRandState);

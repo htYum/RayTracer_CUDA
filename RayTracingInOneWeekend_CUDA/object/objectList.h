@@ -10,7 +10,7 @@ public:
     __device__ ObjectList(Object** list, int n) { objects = list; size = n; }
     __device__ ~ObjectList() {}
 
-    __device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const;
+    __device__ virtual bool hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState) const;
     __device__ virtual bool boundingBox(AABB& box, float t0, float t1) const;
 
 public:
@@ -18,13 +18,13 @@ public:
     int size;
 };
 
-bool ObjectList::hit(const Ray& r, float tMin, float tMax, HitRecord& rec) const {
+bool ObjectList::hit(const Ray& r, float tMin, float tMax, HitRecord& rec, curandState* localRandState) const {
     HitRecord tempRec;
     bool hitOne = false;
     float far = tMax;
 
     for (int i = 0; i < size; ++i) {
-        if (objects[i]->hit(r, tMin, far, tempRec)) {
+        if (objects[i]->hit(r, tMin, far, tempRec, localRandState)) {
             hitOne = true;
             far = tempRec.t;
             rec = tempRec;

@@ -9,6 +9,7 @@ struct HitRecord;
 class Material {
 public:
     __device__ virtual bool scatter(const Ray& rayIn, const HitRecord& rec, Vec3& attenuation, Ray& scattered, curandState* localRandState) const = 0;
+    __device__ virtual Vec3 emitted(float u, float v, const Vec3& p) const { return Vec3(0, 0, 0); }
 };
 
 __device__ Vec3 reflect(const Vec3& vec, const Vec3& normal) {

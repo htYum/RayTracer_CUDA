@@ -11,9 +11,9 @@ public:
     __host__ __device__ Vec3(float v1, float v2, float v3) : val{ v1, v2, v3 } {}
     __host__ __device__ Vec3(const Vec3& rhs) : val{ rhs.val[0], rhs.val[1], rhs.val[2] } {}
 
-    __host__ __device__ float getX() { return val[0]; }
-    __host__ __device__ float getY() { return val[1]; }
-    __host__ __device__ float getZ() { return val[2]; }
+    __device__ float getX() const { return val[0]; }
+    __device__ float getY() const { return val[1]; }
+    __device__ float getZ() const { return val[2]; }
 
     __host__ __device__ float lengthSquared() {
         return val[0] * val[0] + val[1] * val[1] + val[2] * val[2];

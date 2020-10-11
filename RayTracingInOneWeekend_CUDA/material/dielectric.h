@@ -7,7 +7,7 @@ public:
     float refIdx;
 
 public:
-    __host__ __device__ Dielectric(float ri) : refIdx(ri) {}
+    __device__ Dielectric(float ri) : refIdx(ri) {}
 
     __device__ virtual bool scatter(const Ray& rayIn, const HitRecord& rec, Vec3& attenuation, Ray& scattered, curandState* localRandState)const;
 };

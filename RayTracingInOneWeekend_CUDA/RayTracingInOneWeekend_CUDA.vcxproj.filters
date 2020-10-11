@@ -84,6 +84,27 @@
     <ClInclude Include="texture\ImageTexture.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="material\DiffuseLight.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object\flat.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object\box.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object\yRotate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object\translate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="material\Isotropic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="object\constantMedium.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="cuda_main.cu" />
