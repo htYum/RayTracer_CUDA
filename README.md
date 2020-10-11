@@ -1,5 +1,18 @@
 # RayTracer_CUDA
- using cuda with ***GTX 1066*** 
-å®žçŽ°Texttureæ•ˆæžœï¼Œçº¯è‰²ã€å›¾ç‰‡è´´å›¾ï¼ˆstb_imageï¼‰
-ï¼ˆå›¾ä¸­æš‚æ—¶åŽ»æŽ‰äº†æ™¯æ·±æ•ˆæžœï¼‰
-![img](https://github.com/htYum/RayTracer_CUDA/blob/ch2_texture/x64/Release/main.png)
+using cuda with ***GTX 1066***
+
+>ÒòÎª¶ÔCUDAµÄÊ¹ÓÃºÍgpu¼Ü¹¹µÄ²»ÊìÏ¤£¬ÒÔ¼°Ç°ÆÚ²Î¿¼ÁËÇ°Ò»±¾mini bookµÄCUDA´úÂëµ¼ÖÂÕâ±¾next weekÏà¹Ø´úÂëÒ²²ÉÓÃÁËÏëµ±È»µÄ½á¹¹  
+½á¹û¾ÍÊÇÏÔ¿¨Õ¼ÓÃÂÊ¼¸ºõÎª0£¬»ìÂÒµÄÏÔ´æ¹ÜÀí£¨ÔÚÏÔ¿¨Àï¸ãµÝ¹éºÍBVH²»¿ÉÈ¡£©£¬ÒÔ¼°³¬³¤µÄ´¦ÀíÊ±¼ä£¨ËäÈ»±ÈÎÒcpu»¹ÊÇ¿ì£¬µ«ÕâËÙ¶ÈÕæµÄ²»¸Ò¹§Î¬£©  
+Ä¿Ç°ÈÔÔÚÑ§Ï°Ïà¹ØÖªÊ¶£¬Ï£ÍûÖ®ºóÄÜÓÐ×ã¹»µÄÄÜÁ¦ÔÚÕâÖ®ÉÏÓÅ»¯»òÕßÖØÐ´£¬Íê³ÉÐ§¹û¸üºÃµÄäÖÈ¾Æ÷
+#### ×îÖÕ³¡¾°  
+Ã»ÓÐ×öÔ­ÊéÖÐµÄ°ØÁÖÔëÉùÌùÍ¼  
+É¾¼õÁËµØ°åµÄ¸öÊý  
+ÒÔ¼°È¥µôÁËÄÇ¸ö1000¸öÐ¡ÇòµÄÁ¢·½Ìå£¨¾ÞºÄÊ±¼ä£¬ÒòÎªBVHµÄ´´½¨ºÍµÝ¹é²éÕÒÓÐ´óÎÊÌâ£¬ÏëÓÃCUDA¸ãBVHµÄÍ¬Ñ§½¨Òé²Î¿¼ÓÅÐãÂÛÎÄ£¬²»¹ý´ó¸ÅÒ²²»»áÓÐÈËÐ´³öÎÒÕâÖÖÏ¡ÀÃµÄ´úÂë£©  
+·Ö±æÂÊ800*800 ²ÉÑùÊý5000 äÖÈ¾Ê±¼ä6.5h£¨Ì«¶ªÈËÁË£¬²»¹ýºÃÔÚ5000²ÉÑùµÄÐ§¹û»¹ÐÐ£¬ÓÃÏÂÒ»±¾ÊéµÄÃÉÌØ¿¨Âå·½·¨Ó¦¸Ã»á´ó·ùÌáÉýÐ§¹û  
+![main](https://github.com/htYum/RayTracer_CUDA/blob/ch3_final_scene/x64/Release/main.png)
+
+--------  
+
+#### Ö®Ç°²âÊÔÐ§¹ûÓÃµÄcornell box  
+·Ö±æÂÊ1920*1080 ²ÉÑùÊý8000 äÖÈ¾Ê±¼ä14h£¨¶ªÈË  
+![1](https://github.com/htYum/RayTracer_CUDA/blob/ch3_final_scene/x64/Release/1.png)
